@@ -1,6 +1,6 @@
 import pandas as pd
 import features
-import regerParser
+import regexParser
 # data1=features.Features("rakshith", "rakshith.dope@gmail.com", "alphanimble")
 
 df = pd.read_csv("data.csv")
@@ -10,13 +10,13 @@ parsed_data_list = []
 
 for index, row in emailDf.iterrows():
     obj=features.Features()
-    obj.message_id=regerParser.extract_message_id(row['message'])
-    obj.sender_email = regerParser.extract_sender_email(row['message']) 
-    obj.reciever_email = regerParser.extract_reciever_email(row['message']) 
-    obj.sender_org = regerParser.extract_sender_org(row['message']) 
-    obj.reciever_org = regerParser.extract_reciever_org(row['message']) 
-    obj.body = regerParser.extract_body(row['message']) 
-    obj.date = regerParser.extract_date(row['message']) 
+    obj.message_id=regexParser.extract_message_id(row['message'])
+    obj.sender_email = regexParser.extract_sender_email(row['message']) 
+    obj.reciever_email = regexParser.extract_reciever_email(row['message']) 
+    obj.sender_org = regexParser.extract_sender_org(row['message']) 
+    obj.reciever_org = regexParser.extract_reciever_org(row['message']) 
+    obj.body = regexParser.extract_body(row['message']) 
+    obj.date = regexParser.extract_date(row['message']) 
     parsed_data_list.append(obj)
     print(str(obj))
 
