@@ -1,6 +1,7 @@
 import pandas as pd
 import features
 import regexParser
+import mongoPusher
 # data1=features.Features("rakshith", "rakshith.dope@gmail.com", "alphanimble")
 
 df = pd.read_csv("data.csv")
@@ -18,5 +19,7 @@ for index, row in emailDf.iterrows():
     obj.body = regexParser.extract_body(row['message']) 
     obj.date = regexParser.extract_date(row['message']) 
     parsed_data_list.append(obj)
-    print(str(obj))
+
+json_list=mongoPusher.convert_to_json(parsed_data_list)
+print(json_list[1])
 
