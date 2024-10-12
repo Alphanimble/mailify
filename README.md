@@ -1,8 +1,3 @@
-# Intellimail Docs
-
-Created by: Rakshith G
-Created time: October 11, 2024 4:52 AM
-
 # Technologies used
 
 ---
