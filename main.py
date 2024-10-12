@@ -20,6 +20,9 @@ for index, row in emailDf.iterrows():
     obj.date = regexParser.extract_date(row['message']) 
     parsed_data_list.append(obj)
 
-json_list=mongoPusher.convert_to_json(parsed_data_list)
-print(json_list[1])
+mongoPusher.add_to_mongodb_atlas(parsed_data_list[1])
+# with open("output.json") as json_file:
+#     json_df=pd.read_json(json_file)
+# json_df.to_excel("extracted_data.xlsx",index=False)
+
 
