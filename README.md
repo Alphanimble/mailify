@@ -20,7 +20,7 @@ Created time: October 11, 2024 4:52 AM
 
 The project is hosted on Github 
 
-[GitHub - Alphanimble/mailify](https://github.com/Alphanimble/mailify)
+[GitHub - Alphanimble/intellimail](https://github.com/Alphanimble/intellimail)
 
 Clone the repository and run the 
 
