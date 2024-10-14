@@ -42,6 +42,16 @@ def extract_sender_email(text):
     match = re.search(pattern, text, re.MULTILINE)
     return match.group(1) if match else None
 
+def extract_sender_full_name(text):
+    pattern = r'X-From:\s*(.*?)\n'
+    match = re.search(pattern, text, re.MULTILINE)
+    return match.group(1) if match else None
+
+def extract_reciever_full_name(text):
+    pattern = r'X-To:\s*(.*?)\n'
+    match = re.search(pattern, text, re.MULTILINE)
+    return match.group(1) if match else None
+
 def extract_reciever_email(text):
     pattern = r'To:\s*(.*?)\n'
     match = re.search(pattern, text, re.MULTILINE)
